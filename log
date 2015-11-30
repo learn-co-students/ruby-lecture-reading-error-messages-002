@@ -1,0 +1,76 @@
+
+Not having any errors and being all green
+  NameError
+    raises a NameError when encountering undefined barewords (FAILED - 1)
+  SyntaxError
+    raises a SyntaxError for nonsensical code (FAILED - 2)
+  TypeError
+    raises a TypeError for objects of the wrong type (FAILED - 3)
+  ZeroDivisionError
+    raises a ZeroDivisionError for dividing by zero (FAILED - 4)
+
+Failures:
+
+  1) Not having any errors and being all green NameError raises a NameError when encountering undefined barewords
+     Failure/Error:
+       expect{
+         load './lib/a_name_error.rb'
+       }.to_not raise_error
+
+       expected no Exception, got #<NameError: undefined local variable or method `hello_world' for main:Object> with backtrace:
+         # ./lib/a_name_error.rb:3:in `<top (required)>'
+         # ./spec/no_ruby_errors_spec.rb:6:in `load'
+         # ./spec/no_ruby_errors_spec.rb:6:in `block (4 levels) in <top (required)>'
+         # ./spec/no_ruby_errors_spec.rb:5:in `block (3 levels) in <top (required)>'
+     # ./spec/no_ruby_errors_spec.rb:5:in `block (3 levels) in <top (required)>'
+
+  2) Not having any errors and being all green SyntaxError raises a SyntaxError for nonsensical code
+     Failure/Error:
+       expect{
+         load './lib/a_syntax_error.rb'
+       }.to_not raise_error
+
+       expected no Exception, got #<SyntaxError: /home/nitrous/code/labs/ruby-lecture-reading-error-messages-002/lib/a_syntax_error.rb:3: syntax error, unexpected end-of-input> with backtrace:
+         # ./spec/no_ruby_errors_spec.rb:14:in `load'
+         # ./spec/no_ruby_errors_spec.rb:14:in `block (4 levels) in <top (required)>'
+         # ./spec/no_ruby_errors_spec.rb:13:in `block (3 levels) in <top (required)>'
+     # ./spec/no_ruby_errors_spec.rb:13:in `block (3 levels) in <top (required)>'
+
+  3) Not having any errors and being all green TypeError raises a TypeError for objects of the wrong type
+     Failure/Error:
+       expect{
+         load './lib/a_type_error.rb'
+       }.to_not raise_error
+
+       expected no Exception, got #<TypeError: String can't be coerced into Fixnum> with backtrace:
+         # ./lib/a_type_error.rb:3:in `+'
+         # ./lib/a_type_error.rb:3:in `<top (required)>'
+         # ./spec/no_ruby_errors_spec.rb:22:in `load'
+         # ./spec/no_ruby_errors_spec.rb:22:in `block (4 levels) in <top (required)>'
+         # ./spec/no_ruby_errors_spec.rb:21:in `block (3 levels) in <top (required)>'
+     # ./spec/no_ruby_errors_spec.rb:21:in `block (3 levels) in <top (required)>'
+
+  4) Not having any errors and being all green ZeroDivisionError raises a ZeroDivisionError for dividing by zero
+     Failure/Error:
+       expect{
+         load './lib/a_division_by_zero_error.rb'
+       }.to_not raise_error
+
+       expected no Exception, got #<ZeroDivisionError: divided by 0> with backtrace:
+         # ./lib/a_division_by_zero_error.rb:3:in `/'
+         # ./lib/a_division_by_zero_error.rb:3:in `<top (required)>'
+         # ./spec/no_ruby_errors_spec.rb:30:in `load'
+         # ./spec/no_ruby_errors_spec.rb:30:in `block (4 levels) in <top (required)>'
+         # ./spec/no_ruby_errors_spec.rb:29:in `block (3 levels) in <top (required)>'
+     # ./spec/no_ruby_errors_spec.rb:29:in `block (3 levels) in <top (required)>'
+
+Finished in 0.01878 seconds (files took 0.10175 seconds to load)
+4 examples, 4 failures
+
+Failed examples:
+
+rspec ./spec/no_ruby_errors_spec.rb:4 # Not having any errors and being all green NameError raises a NameError when encountering undefined barewords
+rspec ./spec/no_ruby_errors_spec.rb:12 # Not having any errors and being all green SyntaxError raises a SyntaxError for nonsensical code
+rspec ./spec/no_ruby_errors_spec.rb:20 # Not having any errors and being all green TypeError raises a TypeError for objects of the wrong type
+rspec ./spec/no_ruby_errors_spec.rb:28 # Not having any errors and being all green ZeroDivisionError raises a ZeroDivisionError for dividing by zero
+
