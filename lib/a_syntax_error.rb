@@ -1,3 +1,3 @@
 x = 1
 
-x = 
+x = "New value of x"
