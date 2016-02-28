@@ -1,4 +1,5 @@
 describe "Not having any errors and being all green" do
+  #Four types of errors thrown by Ruby interpreter
 
   context 'NameError' do
     it 'raises a NameError when encountering undefined barewords' do
